@@ -9,3 +9,4 @@ Just my take on CMake project template.
 * https://github.com/bsamseth/cpp-project
 * https://github.com/filipdutescu/modern-cpp-template
 * https://github.com/Lectem/cpp-boilerplate
+* https://github.com/lefticus/cpp_starter_project
