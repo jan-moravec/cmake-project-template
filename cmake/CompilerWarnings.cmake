@@ -68,7 +68,7 @@ function(set_project_warnings project_name)
 
   set(GCC_WARNINGS
       ${CLANG_WARNINGS}
-      -Wmisleading-indentation # warn if identation implies blocks where blocks
+      -Wmisleading-indentation # warn if indentation implies blocks where blocks
                                # do not exist
       -Wduplicated-cond # warn if if / else chain has duplicated conditions
       -Wduplicated-branches # warn if if / else branches have duplicated code
@@ -79,12 +79,18 @@ function(set_project_warnings project_name)
 
   if(MSVC)
     set(PROJECT_WARNINGS ${MSVC_WARNINGS})
-  elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+  elseif(CMAKE_CXX_COMPILER_ID STREQUAL ".*Clang")
     set(PROJECT_WARNINGS ${CLANG_WARNINGS})
-  else()
+  elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     set(PROJECT_WARNINGS ${GCC_WARNINGS})
+  else()
+    message(AUTHOR_WARNING "No compiler warnings set for '${CMAKE_CXX_COMPILER_ID}' compiler.")
   endif()
 
-  target_compile_options(${project_name} INTERFACE ${PROJECT_WARNINGS})
+  target_compile_options(${project_name} PUBLIC ${PROJECT_WARNINGS})
+  
+  if(NOT TARGET ${project_name})
+    message(AUTHOR_WARNING "${project_name} is not a target, thus no compiler warning were added.")
+  endif()
 
 endfunction()

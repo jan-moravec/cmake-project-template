@@ -1,6 +1,6 @@
 # My CMake project template
 
-Just my take on CMake project template. 
+Just my take on CMake project template.
 
 ## Sources
 

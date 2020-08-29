@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.15)
 
 project(
   AwesomeTemplateProject
@@ -6,4 +6,13 @@ project(
   DESCRIPTION "An example project with CMake"
   LANGUAGES CXX)
 
-add_executable(AwesomeExecutable main.cpp)
+include(cmake/StandardProjectSettings.cmake)
+include(cmake/CompilerWarnings.cmake)
+include(cmake/PreventInSourceBuilds.cmake)
+include(cmake/Cache.cmake)
+
+# The compiled library code is here
+add_subdirectory(src)
+
+# The executable code is here
+add_subdirectory(app)
