@@ -3,5 +3,8 @@
 
 int main(int, char **)
 {
-    std::cout << greetings("World") << std::endl;
+    char a[10];
+    a[100] = 0;
+    char *c = NULL;
+    std::cout << greetings("World") << c << std::endl;
 }
