@@ -1,4 +1,7 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.20)
+
+include(cmake/Vcpkg.cmake)
+run_vcpkg(True)
 
 project(
   AwesomeTemplateProject
@@ -22,6 +25,9 @@ enable_doxygen()
 
 # Set compiler warnings
 set(WARNINGS_AS_ERRORS ON)
+
+# Additional libraries
+find_package(fmt CONFIG REQUIRED)
 
 # The compiled library code is here
 add_subdirectory(src)

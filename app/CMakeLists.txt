@@ -6,7 +6,7 @@ set(SOURCE_LIST main.cpp)
 
 add_executable(greet ${SOURCE_LIST})
 
-target_link_libraries(greet PRIVATE libgreet)
+target_link_libraries(greet PRIVATE libgreet fmt::fmt)
 
 # Set standard
 target_compile_features(greet PUBLIC cxx_std_20)
