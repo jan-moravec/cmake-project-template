@@ -2,6 +2,7 @@
     "name": "greeter",
     "version": "1.0",
     "dependencies": [
-        "fmt"
+        "fmt",
+        "catch2"
     ]
 }
