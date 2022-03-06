@@ -27,19 +27,25 @@ jobs:
       # Matrix of different job configurations. 
       # A matrix allows you to create multiple jobs by performing variable substitution in a single job definition.    
       matrix:
-        build_type:
-          - Release
-          - Debug
-
         include:
           - os: windows-latest
             compiler: msvc
+            build_type: Debug
+          - os: windows-latest
+            compiler: msvc
+            build_type: Release
           - os: ubuntu-latest
             compiler: gcc
+            build_type: Debug
           - os: ubuntu-latest
-            compiler: llvm
+            compiler: gcc
+            build_type: Release
           - os: macos-latest
             compiler: llvm
+            build_type: Debug
+          - os: macos-latest
+            compiler: llvm
+            build_type: Release
 
 
     steps:
