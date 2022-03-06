@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/jan-moravec/cmake-project-template/actions/workflows/ci.yml/badge.svg)](https://github.com/jan-moravec/cmake-project-template/actions)
+
 # My CMake project template
 
 Just my take on CMake project template.
