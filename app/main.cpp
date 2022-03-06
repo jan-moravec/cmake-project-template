@@ -4,6 +4,6 @@
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char **args)
 {
-    fmt::print("{}\n", greetings("World"));
-    std::cout << greetings("Universe") << std::endl;
+    fmt::print("{}\n", greeter::greetings("World"));
+    std::cout << greeter::greetings("Universe") << std::endl;
 }

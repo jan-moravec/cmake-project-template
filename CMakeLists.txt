@@ -11,13 +11,14 @@ if(IS_MASTER_PROJECT)
 endif()
 
 project(
-    AwesomeTemplateProject
-    VERSION 0.2.1
+    MyTemplateProject
+    VERSION 0.2.2
     DESCRIPTION "An example project with CMake"
     LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 
+# Additional scripts and functions
 include(cmake/StandardProjectSettings.cmake)
 include(cmake/CompilerWarnings.cmake)
 include(cmake/PreventInSourceBuilds.cmake)
@@ -25,10 +26,14 @@ include(cmake/Cache.cmake)
 include(cmake/StaticAnalyzers.cmake)
 include(cmake/Doxygen.cmake)
 
+# Enable desired functionality
 enable_cppcheck()
 enable_clang_tidy()
 enable_cache()
 enable_testing()
+
+# Create header with project version
+configure_file(cmake/version.h.in ${CMAKE_SOURCE_DIR}/include/greeter/version.h @ONLY)
 
 # Link this 'library' to set the c++ standard / compile-time options requested
 add_library(project_options INTERFACE)

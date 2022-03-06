@@ -3,5 +3,5 @@
 #include <greeter/greeter.h>
 
 TEST_CASE( "Simple test", "[single-file]" ) { 
-    REQUIRE( greetings("World") == "Hello World!" );
+    REQUIRE( greeter::greetings("World") == "Hello World!" );
 }
